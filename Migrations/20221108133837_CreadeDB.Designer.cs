@@ -12,8 +12,8 @@ using Neamt_Roxana_Lab2.Data;
 namespace Neamt_Roxana_Lab2.Migrations
 {
     [DbContext(typeof(Neamt_Roxana_Lab2Context))]
-    [Migration("20221102200223_AssignedCategoryData")]
-    partial class AssignedCategoryData
+    [Migration("20221108133837_CreadeDB")]
+    partial class CreadeDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

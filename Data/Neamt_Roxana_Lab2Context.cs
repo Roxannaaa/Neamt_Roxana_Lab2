@@ -21,5 +21,7 @@ namespace Neamt_Roxana_Lab2.Data
         public DbSet<Neamt_Roxana_Lab2.Models.Author> Author { get; set; }
 
         public DbSet<Neamt_Roxana_Lab2.Models.Category> Category { get; set; }
+
+        public DbSet<Neamt_Roxana_Lab2.Models.Category> BookCategory { get; set; }
     }
 }
