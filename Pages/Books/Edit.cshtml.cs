@@ -28,6 +28,7 @@ namespace Neamt_Roxana_Lab2.Pages.Books
             }
             Book = await _context.Book
             .Include(b => b.Publisher)
+            .Include(i => i.Author)
             .Include(b => b.BookCategories).ThenInclude(b => b.Category)
             .AsNoTracking()
             .FirstOrDefaultAsync(m => m.ID == id);
@@ -42,10 +43,10 @@ namespace Neamt_Roxana_Lab2.Pages.Books
             PopulateAssignedCategoryData(_context, Book);
             var authorList = _context.Author.Select(x => new
             {
-                x.Id,
+                x.ID,
                 FullName = x.LastName + " " + x.FirstName
             });
-            ViewData["AuthorId"] = new SelectList(authorList, "Id", "FullName");
+            ViewData["AuthorID"] = new SelectList(authorList, "Id", "FullName");
             ViewData["PublisherID"] = new SelectList(_context.Publisher, "ID",
            "PublisherName");
             return Page();
@@ -60,6 +61,7 @@ namespace Neamt_Roxana_Lab2.Pages.Books
             }
             var bookToUpdate = await _context.Book
             .Include(i => i.Publisher)
+            .Include(i => i.Author)
             .Include(i => i.BookCategories)
             .ThenInclude(i => i.Category)
             .FirstOrDefaultAsync(s => s.ID == id);
@@ -71,7 +73,7 @@ namespace Neamt_Roxana_Lab2.Pages.Books
             if (await TryUpdateModelAsync<Book>(
             bookToUpdate,
             "Book",
-            i => i.Title, i => i.Author,
+            i => i.Title, i => i.AuthorID,
             i => i.Price, i => i.PublishingDate, i => i.Publisher))
             {
                 UpdateBookCategories(_context, selectedCategories, bookToUpdate);

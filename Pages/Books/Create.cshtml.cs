@@ -22,10 +22,10 @@ namespace Neamt_Roxana_Lab2.Pages.Books
         {
             var authorList = _context.Author.Select(x => new
             {
-                x.Id,
+                x.ID,
                 FullName = x.LastName + " " + x.FirstName
             });
-            ViewData["AuthorID"] = new SelectList(authorList, "ID", "FullName");
+            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "FullName");
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID",
            "PublisherName");
 
