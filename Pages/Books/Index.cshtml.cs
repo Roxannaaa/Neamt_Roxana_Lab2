@@ -24,7 +24,7 @@ namespace Neamt_Roxana_Lab2.Pages.Books
         public BookData BookD { get; set; }
         public int BookID { get; set; }
         public int CategoryID { get; set; }
-
+        public int AuthorID { get; set; }
         public string TitleSort { get; set; }
         public string AuthorSort { get; set; }
         public string CurrentFilter { get; set; }

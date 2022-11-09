@@ -47,7 +47,7 @@ namespace Neamt_Roxana_Lab2.Pages.Books
                 FullName = x.LastName + " " + x.FirstName
             });
             ViewData["AuthorID"] = new SelectList(authorList, "Id", "FullName");
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "ID",
+            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID",
            "PublisherName");
             return Page();
         }

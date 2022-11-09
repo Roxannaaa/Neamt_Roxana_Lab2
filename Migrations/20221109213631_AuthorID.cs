@@ -4,7 +4,7 @@
 
 namespace Neamt_Roxana_Lab2.Migrations
 {
-    public partial class AuthorId : Migration
+    public partial class AuthorID : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
