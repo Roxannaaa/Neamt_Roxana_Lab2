@@ -14,16 +14,17 @@ namespace Neamt_Roxana_Lab2.Models
         public string Title { get; set; }
         [Column(TypeName = "decimal(6, 2)")]
 
-        public int? AuthorID { get; set; }
-        public Author? Author { get; set; }//navigation property
-
         public decimal Price { get; set; }
 
+        public int? AuthorID { get; set; }
+        public Author? Author { get; set; }//navigation property
+        
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
 
         public int? PublisherID { get; set; }
         public Publisher? Publisher { get; set; }//navigation property
+
         public ICollection<BookCategory>? BookCategories { get; set; }
 
 

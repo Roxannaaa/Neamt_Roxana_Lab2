@@ -51,11 +51,11 @@ namespace Neamt_Roxana_Lab2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<decimal?>("AuthorID")
-                        .HasColumnType("decimal(6,2)");
+                    b.Property<int?>("AuthorID")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(6,2)");
 
                     b.Property<int?>("PublisherID")
                         .HasColumnType("int");

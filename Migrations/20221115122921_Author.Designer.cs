@@ -12,8 +12,8 @@ using Neamt_Roxana_Lab2.Data;
 namespace Neamt_Roxana_Lab2.Migrations
 {
     [DbContext(typeof(Neamt_Roxana_Lab2Context))]
-    [Migration("20221109213631_AuthorID")]
-    partial class AuthorID
+    [Migration("20221115122921_Author")]
+    partial class Author
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,11 +53,11 @@ namespace Neamt_Roxana_Lab2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<decimal?>("AuthorID")
-                        .HasColumnType("decimal(6,2)");
+                    b.Property<int?>("AuthorID")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(6,2)");
 
                     b.Property<int?>("PublisherID")
                         .HasColumnType("int");
